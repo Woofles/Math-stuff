@@ -1,0 +1,6 @@
+Kolakoski_sequence O(n*n)
+ 5k ->  0.089 sec
+10k ->  0.340 sec
+20k ->  1.334 sec
+40k ->  5.216 sec
+80k -> 20.319 sec
