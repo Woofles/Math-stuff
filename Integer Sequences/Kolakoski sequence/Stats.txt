@@ -1,12 +1,15 @@
 Kolakoski_sequence O(n*n)
- 5k ->  0.089 sec
-10k ->  0.340 sec
-20k ->  1.334 sec
-40k ->  5.216 sec
-80k -> 20.319 sec
+  5k ->   0.089 sec
+ 10k ->   0.340 sec
+ 20k ->   1.334 sec
+ 40k ->   5.216 sec
+ 80k ->  20.319 sec
+160k ->  76.167 sec
+320k -> 301.189 sec
 
 distToLast() shouldn't be possible to be improved
 	no stats collected.
+	expecting between O(log(n)) and O(n*log(n));
 
 containsOne() is currently O(n).
 	Should be possible to lower it to distToLast()'s speed.

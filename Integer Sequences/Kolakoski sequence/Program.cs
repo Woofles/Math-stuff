@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kolakoski_sequence
+namespace VanEckSequence
 {
     class Program
     {
@@ -12,12 +12,8 @@ namespace Kolakoski_sequence
         {
             List<int> list = new List<int>(new int[0]);
             list.Add(0);
-
-            DateTime start = new DateTime();
-            DateTime end = new DateTime();
-
-            start = DateTime.Now;
-            for (int i = 0; i < 80000; i++)
+            
+            for (int i = 0; i < 320; i++)
             {
                 if (ContainsOne(list, list[i]))
                 {
@@ -28,11 +24,8 @@ namespace Kolakoski_sequence
                     list.Add(distToLast(list, list[i]));
                 }
             }
-            end = DateTime.Now;
-            TimeSpan elapsed = new TimeSpan(end.Ticks - start.Ticks);
-            //foreach (int num in list) { Console.Write(num + " "); }
-            //Console.WriteLine();
-            Console.WriteLine(elapsed.TotalSeconds);
+            foreach (int num in list) { Console.Write(num + " "); }
+            Console.WriteLine();
         }
         static int distToLast(List<int> list, int val)
         {
@@ -47,15 +40,15 @@ namespace Kolakoski_sequence
             }
             return dist;
         }
-
-        static bool ContainsOne(List<int> list, int val)
+        
+        static bool ContainsOne(List<int> list, int value)
         {
-            int times = 0;
-            foreach (int i in list)
+            int valueCount = 0;
+            foreach (int element in list)
             {
-                if (i == val) { times++; }
+                if (element == value) { valueCount++; }
             }
-            return (times==1);
+            return (valueCount == 1);
         }
     }
 }
